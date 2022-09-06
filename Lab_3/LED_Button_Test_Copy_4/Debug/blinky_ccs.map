@@ -1,0 +1,322 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.5                     
+******************************************************************************
+>> Linked Fri Apr 22 02:48:17 2022
+
+OUTPUT FILE NAME:   <LED_Button_Test_Copy_4.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000009b9
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000bea  0003f416  R  X
+  SRAM                  20000000   00008000  000003dc  00007c24  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000bf0   00000bf0    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000946   00000946    r-x .text
+  00000bb8    00000bb8    00000038   00000038    r-- .cinit
+20000000    20000000    000003dc   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    000001c8   00000000    rw- .bss
+  200003c8    200003c8    00000014   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000946     
+                  0000026c    000001c8     LED_Button_Test_Copy_4.obj (.text:main)
+                  00000434    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  00000566    00000002     startup_ccs.obj (.text:FaultISR)
+                  00000568    000000f4     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  0000065c    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  000006f8    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00000760    0000005e                                   : i_divt2.asm.obj (.text)
+                  000007be    00000002     startup_ccs.obj (.text:IntDefaultHandler)
+                  000007c0    0000004c     LED_Button_Test_Copy_4.obj (.text:Incorrect_Input)
+                  0000080c    00000048     LED_Button_Test_Copy_4.obj (.text:Correct_Input)
+                  00000854    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : hosttime.c.obj (.text:HOSTtime)
+                  0000089c    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  000008e0    00000038     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralReady)
+                  00000918    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.c.obj (.text:__TI_writemsg)
+                  00000950    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00000984    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.c.obj (.text:__TI_readmsg)
+                  000009b8    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  000009ec    00000034                                   : rand.c.obj (.text:rand)
+                  00000a20    0000002c     LED_Button_Test_Copy_4.obj (.text:LEDs_On)
+                  00000a4c    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  00000a76    00000002     startup_ccs.obj (.text:NmiSR)
+                  00000a78    00000028     LED_Button_Test_Copy_4.obj (.text:DelaySetup)
+                  00000aa0    00000028     LED_Button_Test_Copy_4.obj (.text:Show_Sequence)
+                  00000ac8    00000024     rtsv7M4_T_le_v4SPD16_eabi.lib : rand.c.obj (.text:srand)
+                  00000aec    00000022     LED_Button_Test_Copy_4.obj (.text:Randomizer)
+                  00000b0e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.text:_nop)
+                  00000b10    00000020     LED_Button_Test_Copy_4.obj (.text:Build_Sequence)
+                  00000b30    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00000b4c    00000018     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  00000b64    00000010     LED_Button_Test_Copy_4.obj (.text:myDelay)
+                  00000b74    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : time.c.obj (.text:__time32)
+                  00000b82    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00000b90    00000006     driverlib.lib : gpio.obj (.text:GPIOPinRead)
+                  00000b96    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  00000b9c    00000006     startup_ccs.obj (.text:ResetISR)
+                  00000ba2    00000006     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  00000ba8    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000bac    00000004                                   : exit.c.obj (.text:abort:abort)
+                  00000bb0    00000002                                   : div0.asm.obj (.text)
+
+.cinit     0    00000bb8    00000038     
+                  00000bb8    00000010     (.cinit..data.load) [load image, compression = lzss]
+                  00000bc8    0000000c     (__TI_handler_table)
+                  00000bd4    00000004     --HOLE-- [fill = 0]
+                  00000bd8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00000be0    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000200    000001c8     UNINITIALIZED
+                  20000200    00000120     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.c.obj (.bss:_CIOBUF_)
+                  20000320    00000050     (.common:random_sequence)
+                  20000370    00000050     (.common:user_sequence)
+                  200003c0    00000008     (.common:parmbuf)
+
+.data      0    200003c8    00000014     UNINITIALIZED
+                  200003c8    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.data:$O1$$)
+                  200003d0    00000005     LED_Button_Test_Copy_4.obj (.data)
+                  200003d5    00000003     --HOLE--
+                  200003d8    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : rand.c.obj (.data)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                       code   ro data   rw data
+       ------                       ----   -------   -------
+    .\
+       LED_Button_Test_Copy_4.obj   810    0         165    
+       startup_ccs.obj              12     620       0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       822    620       165    
+                                                            
+    C:/ti/tivaware_c_series_2_1_4_178/driverlib/ccs/Debug/driverlib.lib
+       gpio.obj                     384    0         0      
+       sysctl.obj                   358    0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       742    0         0      
+                                                            
+    C:\ti\ccs1110\ccs\tools\compiler\ti-cgt-arm_20.2.5.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       trgmsg.c.obj                 108    0         288    
+       memcpy_t2.asm.obj            156    0         0      
+       copy_decompress_lzss.c.obj   104    0         0      
+       i_divt2.asm.obj              94     0         0      
+       rand.c.obj                   88     0         4      
+       hosttime.c.obj               72     0         0      
+       autoinit.c.obj               68     0         0      
+       boot_cortex_m.c.obj          52     0         0      
+       copy_zero_init.c.obj         28     0         0      
+       copy_decompress_none.c.obj   14     0         0      
+       time.c.obj                   14     0         0      
+       _lock.c.obj                  2      0         8      
+       hostopen.c.obj               0      0         8      
+       exit.c.obj                   4      0         0      
+       pre_init.c.obj               4      0         0      
+       div0.asm.obj                 2      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       810    0         308    
+                                                            
+       Stack:                       0      0         512    
+       Linker Generated:            0      52        0      
+    +--+----------------------------+------+---------+---------+
+       Grand Total:                 2374   672       985    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00000be0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00000bb8, load size=00000010 bytes, run addr=200003c8, run size=00000014 bytes, compression=lzss
+	.bss: load addr=00000bd8, load size=00000008 bytes, run addr=20000200, run size=000001c8 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00000bc8 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00000b11  Build_Sequence                
+00000bad  C$$EXIT                       
+00000947  C$$IO$$                       
+0000080d  Correct_Input                 
+00000a79  DelaySetup                    
+00000a4d  GPIODirModeSet                
+00000435  GPIOPadConfigSet              
+00000b91  GPIOPinRead                   
+00000b4d  GPIOPinTypeGPIOOutput         
+00000b97  GPIOPinWrite                  
+00000855  HOSTtime                      
+000007c1  Incorrect_Input               
+00000a21  LEDs_On                       
+00000aed  Randomizer                    
+00000b9d  ResetISR                      
+00000aa1  Show_Sequence                 
+00000569  SysCtlClockSet                
+00000ba3  SysCtlDelay                   
+00000951  SysCtlPeripheralEnable        
+000008e1  SysCtlPeripheralReady         
+20000200  __CIOBUF_                     
+20000200  __STACK_END                   
+00000200  __STACK_SIZE                  
+20000200  __STACK_TOP                   
+00000be0  __TI_CINIT_Base               
+00000bf0  __TI_CINIT_Limit              
+00000bc8  __TI_Handler_Table_Base       
+00000bd4  __TI_Handler_Table_Limit      
+0000089d  __TI_auto_init_nobinit_nopinit
+000006f9  __TI_decompress_lzss          
+00000b83  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000985  __TI_readmsg                  
+00000000  __TI_static_base__            
+00000919  __TI_writemsg                 
+00000b31  __TI_zero_init_nomemset       
+00000761  __aeabi_idiv                  
+00000bb1  __aeabi_idiv0                 
+00000761  __aeabi_idivmod               
+00000bb1  __aeabi_ldiv0                 
+0000065d  __aeabi_memcpy                
+0000065d  __aeabi_memcpy4               
+0000065d  __aeabi_memcpy8               
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+20000000  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+00000b75  __time32                      
+000009b9  _c_int00_noargs               
+200003c8  _lock                         
+00000b0f  _nop                          
+UNDEFED   _system_post_cinit            
+00000ba9  _system_pre_init              
+200003cc  _unlock                       
+00000bad  abort                         
+ffffffff  binit                         
+00000000  g_pfnVectors                  
+200003d0  level                         
+0000026d  main                          
+0000065d  memcpy                        
+00000b65  myDelay                       
+200003d4  new_game                      
+200003c0  parmbuf                       
+000009ed  rand                          
+20000320  random_sequence               
+00000ac9  srand                         
+00000b75  time                          
+20000370  user_sequence                 
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+0000026d  main                          
+00000435  GPIOPadConfigSet              
+00000569  SysCtlClockSet                
+0000065d  __aeabi_memcpy                
+0000065d  __aeabi_memcpy4               
+0000065d  __aeabi_memcpy8               
+0000065d  memcpy                        
+000006f9  __TI_decompress_lzss          
+00000761  __aeabi_idiv                  
+00000761  __aeabi_idivmod               
+000007c1  Incorrect_Input               
+0000080d  Correct_Input                 
+00000855  HOSTtime                      
+0000089d  __TI_auto_init_nobinit_nopinit
+000008e1  SysCtlPeripheralReady         
+00000919  __TI_writemsg                 
+00000947  C$$IO$$                       
+00000951  SysCtlPeripheralEnable        
+00000985  __TI_readmsg                  
+000009b9  _c_int00_noargs               
+000009ed  rand                          
+00000a21  LEDs_On                       
+00000a4d  GPIODirModeSet                
+00000a79  DelaySetup                    
+00000aa1  Show_Sequence                 
+00000ac9  srand                         
+00000aed  Randomizer                    
+00000b0f  _nop                          
+00000b11  Build_Sequence                
+00000b31  __TI_zero_init_nomemset       
+00000b4d  GPIOPinTypeGPIOOutput         
+00000b65  myDelay                       
+00000b75  __time32                      
+00000b75  time                          
+00000b83  __TI_decompress_none          
+00000b91  GPIOPinRead                   
+00000b97  GPIOPinWrite                  
+00000b9d  ResetISR                      
+00000ba3  SysCtlDelay                   
+00000ba9  _system_pre_init              
+00000bad  C$$EXIT                       
+00000bad  abort                         
+00000bb1  __aeabi_idiv0                 
+00000bb1  __aeabi_ldiv0                 
+00000bc8  __TI_Handler_Table_Base       
+00000bd4  __TI_Handler_Table_Limit      
+00000be0  __TI_CINIT_Base               
+00000bf0  __TI_CINIT_Limit              
+20000000  __stack                       
+20000000  __start___llvm_prf_cnts       
+20000000  __stop___llvm_prf_cnts        
+20000200  __CIOBUF_                     
+20000200  __STACK_END                   
+20000200  __STACK_TOP                   
+20000320  random_sequence               
+20000370  user_sequence                 
+200003c0  parmbuf                       
+200003c8  _lock                         
+200003cc  _unlock                       
+200003d0  level                         
+200003d4  new_game                      
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[72 symbols]
